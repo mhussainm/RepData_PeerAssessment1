@@ -142,6 +142,7 @@ plot(averagestepsbyinterval$interval,
 <div id="the-number-of-rows-with-missing-data-in-the-original-data-are-2304." class="section level5">
 <h5>The <strong>number of rows</strong> with missing data in the original data are <strong>2304</strong>.</h5>
 <p>Filling in missing values for Steps and creating a new dataset with missing data filled in. After copying the orginal dataset to a new data.frame use the ave() function to derive the mean of <em>steps for the same interval</em> as of the missing <em>steps</em>.</p>
+<p><strong>Strategy applied to impute missing data:</strong> Taking average (mean) of the number of steps taken for the same time interval as of the missing (NA) steps across all the days.</p>
 <pre class="r"><code>activitydatacomplete &lt;- activitydata;
 activitydatacomplete$steps[is.na(activitydatacomplete$steps)] &lt;- ave(activitydatacomplete$steps, activitydatacomplete$interval, FUN=function(x)floor(mean(x, na.rm = T)))[is.na(activitydatacomplete$steps)];</code></pre>
 <p>Summary of original dataset with missing <em>steps</em> values as NA.</p>

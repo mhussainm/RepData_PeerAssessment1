@@ -114,6 +114,8 @@ numofrowswithmissingvalues <- sum(!complete.cases(activitydata));
 ##### The **number of rows** with missing data in the original data are **2304**.
 
 Filling in missing values for Steps and creating a new dataset with missing data filled in. After copying the orginal dataset to a new data.frame use the ave() function to derive the mean of *steps for the same interval* as of the missing  *steps*.
+   
+**Strategy applied to impute missing data:** Taking average (mean) of the number of steps taken for the same time interval as of the missing (NA) steps across all the days.
 
 ```r
 activitydatacomplete <- activitydata;
